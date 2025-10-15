@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
   min-height: 100vh;
 }
 
@@ -22,7 +22,7 @@ body {
 
 .app-header {
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
   margin-bottom: 40px;
   padding: 20px;
 }
@@ -39,12 +39,29 @@ body {
 }
 
 .app-main {
-  background: white;
+  /* translucent glass */
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+
+  /* shape */
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   min-height: 500px;
+
+  /* border + depth */
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  /* subtle tint gradient (optional) */
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.08)
+  );
 }
+
 
 .upload-section {
   margin-bottom: 40px;
@@ -70,7 +87,7 @@ body {
 .file-label {
   display: inline-block;
   padding: 15px 40px;
-  background: #667eea;
+  background: #000000;
   color: white;
   border-radius: 10px;
   cursor: pointer;
@@ -274,14 +291,19 @@ body {
 }
 
 .review-content {
-  background: white;
+  background: #000;          /* black background */
+  color: #fff;               /* white text */
+  font-size: 23px;  
+  font-weight:700;         /* a little bigger than default */
+  line-height: 1.9;          /* slightly taller for readability */
+
   padding: 25px;
   border-radius: 10px;
   border-left: 4px solid #667eea;
-  line-height: 1.8;
   max-height: 600px;
   overflow-y: auto;
 }
+
 
 .review-content h3 {
   color: #764ba2;
@@ -370,7 +392,7 @@ body {
 
 .app-footer {
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 20px;
   margin-top: 30px;
   opacity: 0.9;
